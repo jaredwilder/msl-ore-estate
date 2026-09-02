@@ -4,104 +4,102 @@ Updated: 2026-09-02
 
 ## Meaning of this repository
 
-`jaredwilder/msl-ore-estate` is the persistent control plane for Jared's ENTIRE recoverable mathematical estate across sessions, days, projects, repositories and storage surfaces. Day labels such as Day 1 / Day 2 are provenance labels only, never scope boundaries.
+`jaredwilder/msl-ore-estate` is the persistent control plane for Jared's ENTIRE recoverable mathematical estate. Day/project/session boundaries are provenance only.
 
-Load `MEMORY.md` first in a fresh session. It is the compact cross-session routing table. Then load this file and the tail of `LOG.md`.
+Fresh-session load order: `MEMORY.md` -> this file -> tail of `LOG.md` -> current `compression/` queues.
+
+## Permanent operating loop
+
+**SWEEP -> MERGE -> COMPRESS -> KBK COMPOSE -> KERNEL/EXACT CHECK -> FEEDBACK -> SWEEP AGAIN.**
+
+Mining discovers/preserves. Compression is reversible and never upgrades source support to kernel truth without a real check.
 
 ## Hard invariants
 
-- ONE cumulative estate only. Every sweep inherits all prior ore/provenance and adds to it. No delta-only canonical releases.
-- During raw-mining phase: discover and preserve first. No novelty hunt, magnitude ranking, or broad adjudication unless explicitly requested.
-- ORE INGEST FORMAT v1 is the inbound contract: `ore.jsonl`, `edges.jsonl`, `manifest.json` plus hashed raw sources.
-- Source-claimed status is not machine truth. Inbound `verified`, `certified`, `novel`, `kernel`, `verdict` fields are forbidden.
-- Every run self-mines before it is considered finished.
-- Timeouts resume from source/chunk/row checkpoints; never discard committed ore.
-- Heavy cumulative archives do not travel through ChatGPT. Git holds the control plane; heavy archives move by <=100 MiB shards and ultimately belong in GitHub Releases.
-- Keep one latest full cumulative working estate plus compact transactional sweep/checkpoint state, not many multi-GB physical ancestors.
-- Transactional SQLite edge state is authoritative. Canonical `edges.jsonl` is materialized from committed unique rows; never use an append log as canonical truth.
-- Every swept raw source belongs in the manifest even if it contributes zero new objects and only provenance.
-- Object saturation and provenance/relation saturation are separate questions.
-- Erdős #411 is user-declared CLOSED and is not reopened unless explicitly requested.
-- `LOG.md` is the durable running campaign log and must be updated as sweep state advances.
+- ONE cumulative ORE estate; never a delta-only canonical release.
+- Every source remains represented even when it contributes only provenance or zero new objects.
+- Timeouts resume from committed checkpoints.
+- Transactional SQLite state is authoritative during sweeps; canonical JSONL is materialized from committed unique rows.
+- Source `PROVED` / `COMPUTED` is support, not a machine/kernel verdict.
+- STATED witnesses/counterexamples do not count as proof support.
+- Explicit IMPLIES/COMPOSES remain obligations until checked.
+- Erdős #411 stays CLOSED unless Jared explicitly reopens it.
 
-## Estate scope
+## Current cumulative estate
 
-See `ESTATE-SCOPE.md`. In scope are Day-1/Day-2 mines, all Erdős attack sessions, earlier math conversations, MSL/alien-math language work, Mathematical Speaker work, Lean/formalizer outputs, theorem/gold ledgers, problem dossiers, route histories, witnesses, computations, proof repairs, repositories, certificates, and future math runs. The repo is the control plane for all of it.
+Latest fully materialized tree:
+`MSL-MATH-ESTATE-PASS15-CUMULATIVE-OREV1-2026-09-02`
 
-## Transport state
+- **1,582,863 ORE-v1 objects**
+- **7,238,762 relations**
+- **9,401 source identities**
+- `ore.jsonl` SHA-256: `71108a115947e21de66b808cd51ed7e3bfb4066bb8d6e2b82d221c4d1373bcd6`
+- `edges.jsonl` SHA-256: `29fc0576dded4a60a6bf568a2c708da9067f9691e85dc44135b0700f42bd56a4`
+- manifest SHA-256 after Compression Round 1 artifacts: `65fd646cfcc93cb82e4178051a96a1ba27374553f5001e54d7eb00ab5bc3fed6`
 
-Pass 6 sealed ORE-v1 archive:
-- bytes: 844847714
-- SHA-256: `2682dca8104a49394d8d8d0105fead721c4d220ebecfb990b0aa7bbc0965abbc`
-- nine Google Drive root shards: `MSL-ORE-ESTATE-BOOTSTRAP-PASS6.zip.part-00` through `part-08`
-- repo reassembly/checksum tooling: `transport/pass6/`
-- canonical Drive IDs are in `LOG.md`; duplicate retry copies exist for parts 02 and 06.
+### Pass history
 
-## Mining state
+- Pass 6: 458,212 / 1,133,352
+- Pass 7: +294,327 / +3,154,887 -> 752,539 / 4,288,239
+- Pass 8: +56,514 / +235,621 -> 809,053 / 4,523,860
+- Pass 9: +501,258 / +1,886,215 -> 1,310,311 / 6,410,075
+- Pass 10: +240 / +373 -> 1,310,551 / 6,410,448
+- Pass 11: +1,050 / +4,556 -> 1,311,601 / 6,415,004
+- Pass 12: +48,062 / +216,201 -> 1,359,663 / 6,631,205
+- Pass 13: +20,430 / +134,894 -> 1,380,093 / 6,766,099
+- Pass 14 Day-1 Wave 1: +49,864 / +319,117 -> 1,429,957 / 7,085,216
+- Pass 15 Day-1 Wave 2: **+152,906 / +153,546 -> 1,582,863 / 7,238,762**
 
-Pass 6 sealed: 458,212 objects / 1,133,352 relations.
-Pass 7: +294,327 / +3,154,887 -> 752,539 / 4,288,239.
-Pass 8: +56,514 / +235,621 -> 809,053 / 4,523,860.
-Pass 9 direct leaf sweep: +501,258 / +1,886,215 -> 1,310,311 / 6,410,075.
-Pass 10 raw-hash + numeric/witness context: +240 / +373 -> 1,310,551 / 6,410,448.
-Pass 11 grounded graph motifs: +1,050 / +4,556 -> 1,311,601 / 6,415,004.
-Pass 12 DERIVED_FROM decomposition: +48,062 / +216,201 -> 1,359,663 / 6,631,205.
+## Day-1 estate status
 
-### Pass 13 — COMPLETE
+Recursive nested-archive census found 8,107 unique Day-1 leaf hashes; only 318 were already source-known, leaving 7,789 unseen.
 
-Second-generation atomization over 363,710 later parent-like objects.
+Pass 14 swept 4,762 high-confidence leaves. Pass 15 consumed all remaining 3,027 with source-specific grammars. Therefore **all 7,789 previously unseen Day-1 leaf hashes have now been consumed by at least one source-appropriate extraction grammar.**
 
-- loose extraction was rejected after sampling exposed prose/registry metadata inflation
-- final strict new atoms: **20,430**
-- already-known atoms rediscovered: 4,137
-- strict parent→atom relations: 114,464
-- source-occurrence relations: 20,430
-- gain: **+20,430 objects / +134,894 relations**
-- cumulative: **1,380,093 / 6,766,099**
-- canonical `ore.jsonl` SHA-256: `44e4471b5b8c1204d7f82fb0930b56567198ce6ea566ac357499a796c66441c0`
-- canonical `edges.jsonl` SHA-256: `b0fd63f4d9b7e3caeea1189ce5d869139ef34c672ac4b655c0131efa4e25e04f`
-- manifest SHA-256: `52824727db0b87096eb3f32e2f3a5869a8750c5efde29f48fdd598f835851f71`
+Pass 15 admitted 152,906 new objects; 152,803 are exact Erdős #1061 row computations. All 152,803 rows passed structural consistency checks. 2,703 of the 3,027 Wave-2 sources correctly emitted zero admitted new objects after quality gates.
 
-### Estate Pass 14 / Day-1 Wave 1 — COMPLETE
+## Compression Round 1 — COMPLETE
 
-Recursive census of `gpt-mine.zip` and `gpt-mine-2-novelty.zip` went through nested archives to exact leaf bytes.
+Banked at `compression/ROUND1.md`; full derived artifacts are in the Pass-15 cumulative tree under `COMPRESSION/ROUND1/`.
 
-- 8,107 unique Day-1 leaf hashes
-- only 318 already represented as Pass-13 source hashes
-- **7,789 unique Day-1 leaves were unseen**
-- about 142 MB unique unseen leaf bytes
-- 7,506/7,789 contained detectable mathematical structure
-- 4,762 passed the first high-confidence math-density/source-type gate
-- all 4,762 high-confidence unseen leaves were swept transactionally
-- provisional extraction: 63,363 new objects; quality gate rejected 13,499 telemetry/checksum/path/status/boilerplate objects
-- canonical Day-1 Wave-1 gain: **+49,864 objects / +319,117 relations**
-- **latest fully materialized cumulative estate: 1,429,957 ORE-v1 objects / 7,085,216 relations**
-- cumulative manifest source identities: 6,374
-- canonical `ore.jsonl` SHA-256: `a728fcd9e2f3849e11063d8a439fd5fd872b7815039b95b22c73cfacc34a89be`
-- canonical `edges.jsonl` SHA-256: `f7bac0aee81d6f8315a24be8a438eee9a34510c856b876043ea15b09901ee028`
-- manifest SHA-256: `cbef252680e0a439439af8e445b98781529ae4f722557dd1e84e5da3148c240d`
-- **3,027 unseen lower-confidence Day-1 leaves remain explicitly UNDER_SWEPT, not discarded**
+Exact conservative compression over singleton Erdős-attached mathematics:
+- rows analyzed: 928,704
+- unique normalized statements: 849,557
+- exact same-math clusters: **64,227**
+- redundant rows collapsible losslessly: **79,147**
+- STATED-vs-PROVED/COMPUTED mixed clusters: **19,347**
+- cross-source mixed clusters: 19,345
 
-Local latest working tree: `MSL-MATH-ESTATE-PASS14-CUMULATIVE-OREV1-2026-09-02`.
+Logical skeleton:
+- 928,191 selected IMPLIES/COMPOSES/USES rows
+- **901,681 unique endpoint relations**
+- 220,000 graph-active singleton-problem nodes indexed
 
-## Estate Census 1 discoveries already confirmed outside Pass 14
+Strict support = source status only `PROVED` or `COMPUTED`.
+- directly supported graph nodes: 22,608
+- supported after exact same-math propagation: **26,817**
+- **+4,209 nodes unlocked by compression alone**
+- STATED conjecture targets with >=2 supported COMPOSES components: **0 -> 151**
+- STATED conclusions with >=1 supported explicit IMPLIES premise: **48 -> 116**
+- all-recorded-components-supported composition targets: **0**
+- therefore Round 1 asserts **zero new problem closes**
 
-Exact-SHA/name census has surfaced genuinely external source families including:
-- Aug-31 raw attack sessions for Erdős #203, #875, #389, #749, #376
-- `ERDOS.zip`, `Solve-Erdos-875.zip`, deeper `Solving-Erdős-Problem-203` sessions, `asasdasd.zip` GPT/Gemini experiment
-- MSL canonical alien/language releases v1.1–v1.5 and Mathematical Speaker experiments
-- formalizer-line / formalizer lottery assets and standalone Lean targets
-- extensive Erdős #902 / JSPACE assets
-- Aug-30 standalone Erdős Lean formalizations
-- Aug-29 raw `session-export` archives
-- Aug-28 frontier formalizer/JSPACE/math assets
+Current KBK queues:
+- 116 explicit implication obligations for binding/kernel/exact checking
+- 151 composition-gap conjecture targets
+- 5 dependency-ready nodes
+- problem compression-pressure ledger
 
-The first staged Aug-31 batch had 12/12 genuinely new exact source/archive-leaf hashes relative to the cumulative estate.
+## Estate Census 1 — next raw frontier
+
+Day 1 is source-consumed, but many genuinely external older source families remain outside the cumulative source frontier, including Aug-31 problem sessions (#203/#875/#389/#749/#376), MSL/Mathematical Speaker runs, `asasdasd.zip`, formalizer-line, #902/JSPACE assets, Aug-30 standalone Lean formalizations, Aug-29 session exports, Aug-28 formalizer/JSPACE assets, and older Library math.
 
 ## Current operating objective
 
-1. Continue ESTATE CENSUS 1; do not return to Day-2-only scope.
-2. Sweep the 3,027 remaining lower-confidence unseen Day-1 leaves with source-aware grammars that preserve math while refusing telemetry/metadata inflation.
-3. Ingest genuinely external Aug-31/Aug-30/Aug-29/Aug-28 source families in SHA-addressed batches, globally anti-joining against the 1,429,957-object estate.
-4. Keep every unswept/under-swept source in the coverage census until it is consumed; never silently drop it.
-5. Update `LOG.md`, `RESUME.md`, `MEMORY.md`, manifests and coverage indexes at each materialized cumulative checkpoint.
+Run BOTH permanent lanes as one loop:
+
+1. **KBK Check lane:** bind/decompose the 116 explicit implication obligations; kernel/exact-check what is checkable; append machine verdicts; recompute support/composition; feed exact missing premises back into the estate.
+2. **Estate Sweep lane:** continue exact-SHA census and source-appropriate ingestion of genuinely external older math sources.
+3. Merge both lanes into the same cumulative estate and rerun compression after material checkpoints.
+
+Do not infer a close merely from density or component proximity. A close needs the actual checked composition/contract match.
