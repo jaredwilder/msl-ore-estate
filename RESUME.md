@@ -40,50 +40,37 @@ Pass 6 sealed ORE-v1 archive:
 ## Mining state
 
 Pass 6 sealed: 458,212 objects / 1,133,352 relations.
+Pass 7: +294,327 / +3,154,887 -> 752,539 / 4,288,239.
+Pass 8: +56,514 / +235,621 -> 809,053 / 4,523,860.
+Pass 9 direct leaf sweep: +501,258 / +1,886,215 -> 1,310,311 / 6,410,075.
+Pass 10 raw-hash + numeric/witness context: +240 / +373 -> 1,310,551 / 6,410,448.
+Pass 11 grounded graph motifs: +1,050 / +4,556 -> 1,311,601 / 6,415,004.
+Pass 12 DERIVED_FROM decomposition: +48,062 / +216,201 -> 1,359,663 / 6,631,205.
 
-Pass 7:
-- all 49 staged raw surfaces swept
-- +294,327 objects / +3,154,887 relations
-- cumulative 752,539 / 4,288,239
+### Pass 13 — COMPLETE
 
-Pass 8:
-- all 48 remaining representation surfaces from census swept
-- +56,514 objects / +235,621 relations
-- cumulative 809,053 / 4,523,860
+Second-generation atomization was rerun over all later parent-like objects discovered after the original atomization wave.
 
-Pass 9 direct leaf sweep:
-- consumed 1,483/1,483 previously unswept Pass-5 archive leaf SHA values / ~412 MB
-- +501,258 objects / +1,886,215 relations
-- cumulative 1,310,311 / 6,410,075
+- parents processed: 363,710 / 363,710
+- initial loose extraction: 228,148 candidates; rejected for canonical admission after sampling exposed prose/registry metadata inflation
+- precision re-extraction was then gated again against metadata assignments, timestamps, hashes, file/source fields and programming syntax
+- final strict atom set: 24,567 total candidates
+- globally new strict atoms: **20,430**
+- already-known atoms rediscovered: 4,137
+- strict parent→atom relations: **114,464**
+- new source-occurrence relations: **20,430**
+- Pass-13 total relation gain: **134,894**
+- canonical physical count verification PASSED
+- canonical `ore.jsonl` SHA-256: `44e4471b5b8c1204d7f82fb0930b56567198ce6ea566ac357499a796c66441c0`
+- canonical `edges.jsonl` SHA-256: `b0fd63f4d9b7e3caeea1189ce5d869139ef34c672ac4b655c0131efa4e25e04f`
+- manifest SHA-256: `52824727db0b87096eb3f32e2f3a5869a8750c5efde29f48fdd598f835851f71`
 
-Pass 10 raw-hash recovery + numeric/witness context:
-- original raw manifest: 3,999 rows / 3,971 unique hashes
-- 867/867 exact original hashes physically recoverable from available archives were directly swept
-- +240 objects / +373 relations
-- cumulative 1,310,551 / 6,410,448
+**Latest fully materialized cumulative estate: 1,380,093 ORE-v1 objects / 6,766,099 relations.**
 
-Pass 11 grounded graph motifs + edge-store repair:
-- repaired 410,024 duplicate physical edge-log lines caused by timeout/rollback vs nontransactional file append; unique transactional graph was correct
-- final grounded motif gain +1,050 objects / +4,556 relations
-- cumulative 1,311,601 / 6,415,004
-
-Pass 12 DERIVED_FROM decomposition sweep:
-- indexed 845,423 distinct parent→child endpoint pairs touching 549,924 objects
-- strict singleton-problem, non-CHAIN, substantive-child filtering produced 48,062 coherent decomposition bundles / 216,201 relations
-- **latest fully materialized cumulative state: 1,359,663 ORE-v1 objects / 6,631,205 relations**
-
-Sweep 13 second-generation atomization — IN PROGRESS:
-- purpose: re-run atomization on later parent-like objects discovered after the original atomization wave
-- target census: 363,710 parent-like objects (199,149 Sweep 7; 9,884 Sweep 8; 154,677 Sweep 9), excluding already-atomic kinds and structural CHAIN wrappers
-- resumable chunking: 19/19 chunks complete; all 363,710 parents processed
-- current candidate state: **228,148 distinct atom candidates / 423,183 parent→atom candidate relations**
-- NOT YET MATERIALIZED: next action is global anti-join against the existing 1,359,663-object estate, emit immutable source records/provenance, materialize the cumulative Pass-13 ORE/edge state, update manifest, `LOG.md`, `RESUME.md`, and `MEMORY.md`.
+Local latest working tree: `MSL-MATH-ESTATE-PASS13-CUMULATIVE-OREV1-2026-09-02`.
 
 ## Current operating objective
 
-1. Finish Sweep 13 exactly from its checkpoint; do not restart it.
-2. Then perform an ESTATE-WIDE source census across Library, runtime, Google Drive math assets and known math repositories so Day 1 / older sessions are no longer accidentally outside the ingestion frontier.
-3. Assign stable source records/hashes and extraction-coverage status to every recoverable mathematical artifact.
-4. Feed unswept estate sources through independent grammars into the same cumulative ORE graph.
+Begin ESTATE-WIDE SOURCE CENSUS 1. Inventory every recoverable math-bearing artifact across ChatGPT Library, current/runtime files, Google Drive math assets, known GitHub math repositories, Day 1, Day 2 and older sessions. Assign stable source identity/hash or provider reference, location, project/session provenance and extraction coverage state (`UNSEEN`, `UNDER_SWEPT`, `SWEPT`). Then feed unseen/under-swept sources through independent grammars into this same cumulative ORE estate.
 
-Full historical semantic replay validation at multi-million-edge scale remains infrastructure debt; move to incremental/hash-indexed admission rather than reparsing frozen history every round.
+Do not return to Day-2-only scope.
