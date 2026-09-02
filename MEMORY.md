@@ -60,11 +60,13 @@ Never try to preserve millions of theorem objects as prose memory. Remember wher
 
 ## Scope rule
 
-The campaign scope is now the ENTIRE recoverable mathematical estate across all sessions/days/projects: Day 1, Day 2, earlier Erdős work, MSL language experiments, Lean/formalizer outputs, theorem mines, route histories, witnesses, computations, problem dossiers, repositories, and future math runs. `Day 1` / `Day 2` are provenance labels, not scope boundaries.
+The campaign scope is the ENTIRE recoverable mathematical estate across all sessions/days/projects: Day 1, Day 2, earlier Erdős work, MSL language experiments, Lean/formalizer outputs, theorem mines, route histories, witnesses, computations, problem dossiers, repositories, and future math runs. `Day 1` / `Day 2` are provenance labels, not scope boundaries.
 
 ## Current checkpoint
 
-Read `RESUME.md` for authoritative counts and unfinished work. As of 2026-09-02 the latest fully materialized cumulative state is Pass 12 at 1,359,663 ORE-v1 objects / 6,631,205 relations. Sweep 13 second-generation atomization has processed 363,710 / 363,710 later parent-like objects in 19/19 resumable chunks and currently holds 228,148 distinct atom candidates / 423,183 parent→atom candidate relations awaiting global anti-join against the existing estate and cumulative materialization.
+Read `RESUME.md` for authoritative detail. As of 2026-09-02, Pass 13 is sealed and physically count-verified at **1,380,093 ORE-v1 objects / 6,766,099 relations**. Sweep 13 added 20,430 strict second-generation atoms and 134,894 relations after rejecting a much larger loose candidate set for extraction contamination.
+
+The active next operation is **ESTATE-WIDE SOURCE CENSUS 1**: inventory all recoverable math-bearing artifacts across Library/runtime/Drive/known repos, assign stable source identity/location/provenance and extraction coverage (`UNSEEN`, `UNDER_SWEPT`, `SWEPT`), then ingest unseen/under-swept sources into the same cumulative estate.
 
 ## How to resume in a fresh session
 
@@ -72,7 +74,7 @@ Read `RESUME.md` for authoritative counts and unfinished work. As of 2026-09-02 
 2. Fetch `RESUME.md`.
 3. Fetch tail/current section of `LOG.md`.
 4. Inspect the latest cumulative release/manifest referenced there.
-5. Continue the exact unfinished sweep before starting a new one.
+5. Continue the exact unfinished census/sweep before starting a new one.
 6. Update `LOG.md`, `RESUME.md`, and this file when the authoritative checkpoint changes materially.
 
 Do not ask Jared to reconstruct the project from memory if this repo is accessible.
