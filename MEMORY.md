@@ -6,13 +6,31 @@ This file is intentionally compact. It is the durable pointer a future session s
 
 When Jared says **“sweep the entire estate and add the new things to the repo”**, **“sweep the estate for gold and add to repo / compress”**, **“continue the estate”**, **“next sweep”**, or any obvious equivalent, interpret it as ONE continuous process:
 
-> Resume the exact unfinished checkpoint first. Census and sweep the ENTIRE recoverable mathematical estate across all sessions/days/projects with independent extraction grammars; globally dedupe; merge every newly discovered mathematical object and relation into the ONE cumulative ORE estate with full provenance; then run the compression/KBK layer over the updated estate: losslessly cluster same mathematics, propagate support across exact same-math families, rebuild per-problem obligation/proof graphs, expose composition and implication gaps, send checkable ladders to Lean/kernel/exact computation, append verdicts, and feed every proved/refuted/missing obligation back into the estate and next sweep. Update manifests plus durable repo state (`LOG.md`, `RESUME.md`, `MEMORY.md`, coverage indexes, compression ledgers). Never create a delta-only canonical release. Do not stop at Day 1/Day 2/project boundaries. During mining prioritize discovery/preservation; during compression never upgrade source-supported material to kernel truth without an actual check.
+> Resume the exact unfinished checkpoint first. Census and sweep the ENTIRE recoverable mathematical estate across all sessions/days/projects with independent extraction grammars; globally dedupe; merge every newly discovered mathematical object and relation into the ONE cumulative ORE estate with full provenance; then run the compression/KBK layer over the updated estate: losslessly cluster same mathematics, propagate support across exact same-math families, rebuild per-problem obligation/proof graphs, expose composition and implication gaps, ATTACK those gaps recursively rather than merely reporting them, search the estate for equivalent/stronger missing lemmas, derive child obligations where needed, send checkable ladders to Lean/kernel/exact computation, append verdicts, and feed every proved/refuted/missing obligation back into the estate and next sweep. Update manifests plus durable repo state (`LOG.md`, `RESUME.md`, `MEMORY.md`, coverage indexes, compression ledgers). Never create a delta-only canonical release. Do not stop at Day 1/Day 2/project boundaries. During mining prioritize discovery/preservation; during compression never upgrade source-supported material to kernel truth without an actual check.
 
 Short form:
 
-**SWEEP → MERGE → COMPRESS → KBK COMPOSE → KERNEL/EXACT CHECK → FEEDBACK → SWEEP AGAIN.**
+**SWEEP → MERGE → COMPRESS → KBK COMPOSE → CLOSURE ATTACK → KERNEL/EXACT CHECK → FEEDBACK → SWEEP AGAIN.**
 
 This is the permanent operating loop.
+
+## ZERO-CLOSURE ANTI-SIN
+
+A compression round reporting **zero closes is NEVER a stopping condition or a satisfactory headline** when the compression graph has exposed proof pressure.
+
+If compression yields near-complete targets, supported implication premises, multi-piece conjecture targets, or concentrated missing obligations, the mandatory next action is **Closure Mode**:
+
+1. Rank the most compressed/most-supported targets by smallest genuine missing gap, not merely edge count.
+2. Expand each target into its exact remaining obligations.
+3. Search the ENTIRE estate for exact, equivalent, stronger, special-case, contrapositive, computational, or cross-problem material that can discharge each gap.
+4. Compose those pieces explicitly; every unproved bridge becomes a child obligation rather than a reason to stop.
+5. Push checkable bridges and targets through Lean/kernel/exact computation.
+6. Feed successes, counterexamples, and exact missing hypotheses back into the graph and recompress.
+7. Continue until the target is kernel/exact closed, refuted, or reduced to a genuinely isolated unsupported mathematical gap.
+
+**“The current graph does not already contain a finished proof” is not evidence that the estate cannot close the target. It is the start of the closure search.**
+
+Do not reflexively celebrate “zero closures” as methodological caution. Caution applies to the final verdict; aggression applies to searching/composing the mathematics underneath it.
 
 Do not ask Jared to restate which math, which day, or which project. “Entire estate” means all recoverable mathematics.
 
@@ -29,6 +47,7 @@ Purpose: persistent control plane, resume log, ingestion contract, transport met
 - Cumulative ORE release is the mathematical DATA PLANE.
 - Raw archives / Drive / Library / release assets are the SOURCE BYTES plane.
 - Compression/KBK artifacts are the DERIVED PROOF-PRESSURE plane.
+- Closure Mode is the ACTIVE PROOF-SEARCH plane driven by compressed gaps.
 - `RESUME.md` = current checkpoint.
 - `LOG.md` = chronological campaign history.
 - `ORE-INGEST-FORMAT-v1.md` = inbound contract.
@@ -54,6 +73,8 @@ Never try to preserve millions of theorem objects as prose memory. Remember wher
 13. Source status `PROVED`/`COMPUTED` is support, not kernel truth. `STATED` witnesses/counterexamples do not count as proof support. Kernel/check verdicts are separate machine facts.
 14. KBK composition never infers a proof merely because components are nearby. Explicit implications/compositions become obligations until checked.
 15. Every compression/check result feeds back into the same estate and changes what the next sweep/compression round sees.
+16. **Zero closures after compression triggers Closure Mode; it never terminates the process when proof-pressure targets exist.**
+17. Closure Mode actively searches and derives missing bridges from the estate before concluding a target remains open.
 
 ## Scope rule
 
@@ -72,17 +93,18 @@ As of 2026-09-02:
 - Strict direct-source support covered 22,608 graph nodes. Exact same-math propagation raised this to **26,817**, unlocking **+4,209 nodes without new theorem discovery**.
 - Multi-piece STATED conjecture targets with >=2 supported COMPOSES components changed **0 -> 151** after compression.
 - STATED conclusions with a supported explicit IMPLIES premise changed **48 -> 116**.
-- No target had every recorded COMPOSES component supported, so Compression Round 1 asserted **zero new problem closes**.
-- Next compression action: binding/kernel/exact-check the 116 implication obligations, promote only checked results, feed missing premises and failures back into the estate, then continue whole-estate sweep plus compression loop.
+- Compression Round 1 did not find a target whose currently-recorded COMPOSES components were all supported. **This launches Closure Round 1; it is not a terminal “zero closures” conclusion.**
+- Closure Round 1 must attack the 151 composition-pressure targets and 116 implication obligations, beginning with the smallest true missing-gap targets, searching the entire estate for bridges and pushing checkable compositions into Lean/kernel/exact checks.
 
 ## How to resume in a fresh session
 
 1. Fetch `MEMORY.md`.
 2. Fetch `RESUME.md`.
 3. Fetch current/tail of `LOG.md`.
-4. Inspect `compression/ROUND1.md` and current compression/check queues when the command includes `compress`, `KBK`, `gold`, or simply asks to continue the estate loop.
-5. Continue the exact unfinished sweep/compression/check stage before starting a new one.
-6. Globally dedupe and merge into the one cumulative estate.
-7. Update `LOG.md`, `RESUME.md`, `MEMORY.md`, manifests, coverage indexes, and compression ledgers at material checkpoints.
+4. Inspect `compression/ROUND1.md` and current compression/check queues.
+5. If proof-pressure targets exist, enter/continue Closure Mode before treating the compression round as complete in substance.
+6. Continue the exact unfinished sweep/compression/closure/check stage before starting a new one.
+7. Globally dedupe and merge into the one cumulative estate.
+8. Update `LOG.md`, `RESUME.md`, `MEMORY.md`, manifests, coverage indexes, and compression ledgers at material checkpoints.
 
 Do not ask Jared to reconstruct the project if this repo is accessible.
