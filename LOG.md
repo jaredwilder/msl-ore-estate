@@ -2,81 +2,87 @@
 
 ## 2026-09-02 — repository bootstrap
 
-- Created `jaredwilder/msl-ore-estate` as the persistent control plane for the accumulating MSL/Erdos ore estate.
-- Added ORE INGEST FORMAT v1 and transport/reassembly tooling.
-- Sealed Pass-6 ORE-v1 archive moved out of ChatGPT via nine <=100 MiB Google Drive root shards.
-- Pass-6 sealed state: 458,212 objects / 1,133,352 relations.
+- Created `jaredwilder/msl-ore-estate` as persistent control plane for the cumulative mathematical estate.
+- ORE INGEST FORMAT v1 is canonical inbound contract.
+- Heavy archives use external transport; Pass-6 sealed archive was moved via nine <=100 MiB Google Drive root shards.
 
-## 2026-09-02 — Pass 7 raw sweep
+## 2026-09-02 — Passes 7–12 cumulative mining
 
-- Swept all 49 staged Pass-7 raw surfaces.
-- Materialized cumulative state: 752,539 ORE-v1 objects / 4,288,239 relations.
-- Pass-7 gain: +294,327 objects / +3,154,887 relations.
-- Added row-level resumable checkpoints.
-- Permanent manifest rule: every swept/staged raw source appears even if it creates zero new objects and contributes only provenance.
+- Pass 7: +294,327 objects / +3,154,887 relations -> 752,539 / 4,288,239.
+- Pass 8: +56,514 / +235,621 -> 809,053 / 4,523,860.
+- Pass 9 direct leaf sweep: +501,258 / +1,886,215 -> 1,310,311 / 6,410,075.
+- Pass 10 raw-hash + numeric/witness context: +240 / +373 -> 1,310,551 / 6,410,448.
+- Pass 11 grounded graph motifs: +1,050 / +4,556 -> 1,311,601 / 6,415,004.
+- Pass 12 DERIVED_FROM decomposition: +48,062 / +216,201 -> 1,359,663 / 6,631,205.
+- Pass 11 repaired 410,024 duplicate physical edge-log lines caused by timeout/rollback versus nontransactional file append. Permanent rule: transactional edge state is authoritative; canonical JSONL is materialized from committed unique rows.
 
-## 2026-09-02 — Sweep 8 representation + neighborhood sweep
+## 2026-09-02 — Pass 13 second-generation atomization
 
-- Exhausted all 48 additional source representations from the Pass-7 census.
-- Added field/object replay, nested JSON, adjacent-record windows, native relations, contract diffs, route stitching and obligation bridges.
-- Gain: +56,514 objects / +235,621 relations.
-- Cumulative: 809,053 / 4,523,860.
+- Re-atomized 363,710 parent-like objects discovered after original atomization.
+- Rejected loose 228k-candidate extraction after sampling found registry/prose metadata inflation.
+- Final strict new atoms: 20,430.
+- Strict parent→atom relations: 114,464; source-occurrence relations: 20,430.
+- Gain: **+20,430 objects / +134,894 relations**.
+- Cumulative: **1,380,093 / 6,766,099**.
 
-## 2026-09-02 — Sweep 9 direct leaf-file sweep
+## 2026-09-02 — estate scope expansion / Day-1 census
 
-- SHA census found 1,483 previously unswept leaf files / ~412 MB in the Pass-5 archive.
-- Consumed 1,483/1,483 leaf SHA values, zero missing.
-- Included 759 direct Lean files, 306 recombination dossiers, 303 per-problem dossiers and 61 contract-provenance files.
-- Grammars: raw lines, +/-1 and +/-2 line windows, paragraphs, Lean declaration windows, structured key/value/record neighborhoods, provenance replay and Lean dependencies.
-- 759 Lean files: +19,158 objects / +46,068 relations; 3,283 declaration bindings; +2,686 `USES` relations.
-- 306 recombination dossiers: +312,406 objects. 303 problem dossiers: +50,583.
-- Gain: +501,258 objects / +1,886,215 relations.
-- Cumulative: 1,310,311 / 6,410,075.
+- Scope changed permanently from Day-2 campaign to ENTIRE recoverable mathematical estate across sessions/days/projects.
+- Recursive census of `gpt-mine.zip` and `gpt-mine-2-novelty.zip` descended through nested archives to exact leaf SHA.
+- Found 8,107 unique Day-1 leaf hashes; only 318 were already source-known; **7,789 were unseen**.
+- About 142 MB unique unseen leaf bytes; 7,506 contained detectable mathematical structure.
 
-## 2026-09-02 — Sweep 10 exact-byte recovery + numeric/witness context
+## 2026-09-02 — Estate Pass 14 / Day-1 Wave 1
 
-- Original raw manifest: 3,999 rows / 3,971 unique hashes.
-- Exact original bytes recoverable from available archives: 867 unique hashes; Passes 7–9 had swept 862.
-- Recovered/swept final five receipts (#170, #276, #289, #1142, #1212), reaching 867/867 recoverable-byte saturation.
-- Five receipts added only 3 objects / 19 relations.
-- 94 witness-bank rows -> 188 contextual witness/construction objects / 282 relations.
-- 1,485 numeric payload rows -> 49 objects / 72 relations after excluding booleans, telemetry/admin counts and pairing contextual numerical fields.
-- Gain: +240 objects / +373 relations.
-- Cumulative: 1,310,551 / 6,410,448.
+- Swept 4,762 high-confidence unseen Day-1 leaves transactionally.
+- Provisional 63,363 new objects; source-aware quality gate rejected 13,499 telemetry/checksum/path/status/boilerplate artifacts.
+- Gain: **+49,864 objects / +319,117 relations**.
+- Cumulative: **1,429,957 / 7,085,216**.
+- Remaining 3,027 unseen leaves retained explicitly as UNDER_SWEPT.
 
-## 2026-09-02 — Sweep 11 grounded graph motifs + edge-store repair
+## 2026-09-02 — Estate Pass 15 / Day-1 Wave 2
 
-- Found canonical-file defect: unique relation count 6,410,448 but physical `edges.jsonl` had 6,820,472 lines.
-- Cause: timed-out Pass-9 processes could append edge JSON before SQLite transaction commit; rollback removed DB rows but not file bytes. Duplicate physical lines: 410,024.
-- No unique graph data lost or miscounted. Canonical graph rebuilt from committed transactional rows and physically matches 6,410,448 pre-Sweep-11 relations.
-- Permanent rule: transactional edge table is authoritative; canonical JSONL is materialized from committed rows, never used as write-ahead authority.
-- Topology endpoint pairs: 615,938 COMPOSES, 19,314 USES, 8,514 IMPLIES. Explicit two-hop IMPLIES chains: zero.
-- Motif rule tightened to identical singleton problem attachment.
-- Final motifs: 298 USES dependency bundles, 624 implication fan-outs, 127 implication fan-ins, 1 non-CHAIN composition neighborhood.
-- Gain: +1,050 objects / +4,556 relations.
-- Cumulative: 1,311,601 / 6,415,004.
-- Motif provenance frozen in `91-PASS11-MOTIF-SOURCE-RECORDS.jsonl`.
-- Storage policy: one latest full cumulative working estate + compact/rebuildable sweep state, not multiple multi-GB physical ancestors.
+- Consumed all remaining 3,027 Day-1 leaves with source-specific grammars rather than lowering Wave-1 threshold.
+- Dedicated handlers for exact numeric tables, witness vaults, formalizer logs, semantic contract/review fields, MSL result files, route registries and provenance-only telemetry/admin sources.
+- Major representation recovery: `ERDOS1061_PRIMITIVE_SEEDS_200K.csv` had scored zero under prose-oriented math density despite being 17 MB of exact arithmetic.
+- Admitted **152,803 exact Erdős #1061 row computations**. Every row passed internal table identities (`s=a+b`, `coeff_num=2φ(M)`, `coeff_den=M·s`, stored scaled floor).
+- 103 other mathematical objects admitted.
+- 2,703 Wave-2 sources correctly emitted zero admitted new objects after quality gates.
+- Gain: **+152,906 objects / +153,546 relations**.
+- Cumulative: **1,582,863 objects / 7,238,762 relations**.
+- Every one of the 7,789 Day-1 leaves unseen before estate expansion has now been consumed by at least one source-appropriate grammar.
 
-## 2026-09-02 — Sweep 12 DERIVED_FROM decomposition
+## 2026-09-02 — Compression Round 1 / exact-family KBK
 
-- Indexed 1,591,706 evidence-bearing DERIVED_FROM rows into 845,423 distinct endpoint pairs touching 549,924 objects.
-- 182,551 parent nodes have at least one derived child.
-- Admission: singleton parent problem; child same singleton problem; no CHAIN parent/child; substantive children only; identical child statements collapsed; child identical to parent removed; 2–12 distinct children; bounded bundle size.
-- 48,062 coherent decomposition bundles survived and were emitted as CHAIN ore with exact parent/component provenance.
-- Gain: **+48,062 objects / +216,201 relations**.
-- Cumulative materialized state: **1,359,663 ORE-v1 objects / 6,631,205 relations**.
-- Immutable decomposition provenance: `93-PASS12-DECOMPOSITION-SOURCE-RECORDS.jsonl`.
-- Superseded full working ancestor trees and rebuildable Pass-9/10/11 SQLite caches were removed after Pass-12 materialization to preserve working disk; no unique research content removed.
+Permanent loop established:
+**SWEEP -> MERGE -> COMPRESS -> KBK COMPOSE -> KERNEL/EXACT CHECK -> FEEDBACK -> SWEEP AGAIN.**
+
+Round 1 used conservative exact normalized statement equality; no fuzzy semantic merging.
+
+- Singleton Erdős-attached rows: 928,704.
+- Unique normalized statements: 849,557.
+- Exact same-math clusters: **64,227**.
+- Redundant rows collapsible without provenance loss: **79,147**.
+- STATED-vs-PROVED/COMPUTED mixed clusters: **19,347**, of which 19,345 are cross-source.
+- Logical skeleton: 928,191 raw IMPLIES/COMPOSES/USES rows -> **901,681 unique endpoint relations**.
+- Graph-active singleton-problem nodes indexed: 220,000.
+
+Strict support definition corrected during the round: only source `PROVED` or `COMPUTED` counts as support. STATED witnesses/counterexamples do not.
+
+KBK propagation result:
+- Direct-source-supported graph nodes: **22,608**.
+- After exact same-math support propagation: **26,817**.
+- **+4,209 usable graph nodes unlocked without discovering new mathematics.**
+- STATED conjecture targets with >=2 supported COMPOSES components: **0 -> 151**.
+- STATED conclusions with >=1 supported explicit IMPLIES premise: **48 -> 116**.
+- Nodes whose currently-recorded USES dependencies are all supported: 4 -> 5.
+- Targets with every recorded COMPOSES component supported: **0**.
+- Round 1 therefore asserted **zero new problem closes**.
+
+Derived artifacts are checksummed in Pass 15 under `COMPRESSION/ROUND1/`; repo summary is `compression/ROUND1.md`.
+
+Next KBK action: bind/decompose the 116 implication obligations, kernel/exact-check checkable ones, promote only machine-supported results, feed failures/missing premises back into the cumulative estate, and recompute compression. Raw estate census continues in parallel over older external source families.
 
 ## Transport bootstrap location
 
-- Pass-6 transport shards live in Google Drive / My Drive root, not a folder.
-- Canonical IDs: part-00 `16sJRBJcrYN3z9AZsJxKkgU2g8bJYaUXx`; part-01 `19VTtz7TwkncpIEvSIuYGRN3NWeXpw5zu`; part-02 `1qSi22sFYiRsH18FAxNI8R0Wh0B8Wp0i0`; part-03 `1qa7FMgxRZCU9NDcslBj9marHPAQPfKhi`; part-04 `1bPCrUqQi10T2BPM7MGe-9P2_SHGxIfiA`; part-05 `1bIsoYA0eSmLd_LfG72brjbfLUMTusAE6`; part-06 `1lEy9KWurTn22skQ1bULBUsTTmSQhm_DE`; part-07 `1KGSkZ404YuV5OM91YY4yrUQvvICOWM65`; part-08 `1dOfCdV-lZiU81CAfiYpBQ_j45vn3NiYz`.
-- Duplicate retry copies exist for parts 02 and 06; use canonical IDs above or shard checksums.
-
-## Next raw-sweep direction
-
-- Sweep 13: second-generation atomization over objects introduced by later sweeps, especially Passes 7–12. Pass-4 atomization predates roughly a million subsequently recovered parent objects.
-- Extract exact formula/equality/inequality/congruence/witness/implication clauses from those later objects and attach atoms back with DERIVED_FROM.
-- Exclude already-atomic kinds and recursive CHAIN wrappers to prevent combinatorial self-expansion.
+Pass-6 shards remain in Google Drive / My Drive root. Canonical IDs are recorded in prior repo history / transport metadata; duplicate retry copies exist for parts 02 and 06, so use canonical IDs or checksums.
