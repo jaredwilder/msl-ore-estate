@@ -56,7 +56,22 @@
 - Paired `exact_num`/`exact_den` into exact rational objects; bound related values such as `n_plus_k`, factorization and omega into record-neighborhood objects rather than treating bare integers as standalone mathematics.
 - Sweep-10 gain: **+240 objects / +373 relations**.
 - Cumulative materialized state: **1,310,551 ORE-v1 objects / 6,410,448 relations**.
-- Interpretation for mining only: raw-byte and numeric-payload representations are now strongly saturated; continue with structurally different graph/motif grammars rather than inflating metadata.
+- Raw-byte and numeric-payload representations are strongly saturated relative to physically available bytes.
+
+## 2026-09-02 — Sweep 11 grounded graph motifs + edge-store repair
+
+- Topology scan exposed a physical JSONL defect: manifest/SQLite held 6,410,448 unique relations, while `edges.jsonl` held 6,820,472 physical lines.
+- Root cause: timed-out Pass-9 processes could append edge JSON before the SQLite transaction committed; rollback removed DB rows but not file bytes, so resume appended those relations again. Duplicate physical lines: 410,024.
+- No unique graph data was lost or miscounted. Pass-10 canonical `edges.jsonl` was rebuilt from the frozen Pass-8 graph plus committed unique Pass-9/10 SQLite edge rows and now physically contains exactly 6,410,448 lines.
+- Permanent rule: transactional SQLite edge tables are authoritative; canonical JSONL is materialized from committed rows, never used as a write-ahead authority.
+- Unique topology after repair: OCCURS_IN 4,149,911; DERIVED_FROM 1,591,706; COMPOSES 627,975 evidence-bearing rows / 615,938 distinct endpoint pairs; USES 20,466 rows / 19,314 pairs; IMPLIES 20,116 rows / 8,514 pairs; DUPLICATES 159; REFINES 115.
+- Explicit two-hop IMPLIES topology contains zero A→B→C chains; that proposed grammar is exhausted without emission.
+- Preliminary graph motifs were tightened after sampling: a problem-scoped motif requires identical singleton problem attachment on base and participating neighbors. Generic/multi-problem helpers remain graph relations and do not become problem-labeled ore.
+- Final grounded motifs: 298 new USES dependency bundles, 624 implication fan-out bundles, 127 implication fan-in bundles, 1 non-CHAIN composition neighborhood.
+- Sweep-11 gain: **+1,050 objects / +4,556 relations**.
+- Cumulative materialized state: **1,311,601 ORE-v1 objects / 6,415,004 relations**.
+- Each motif points to immutable `91-PASS11-MOTIF-SOURCE-RECORDS.jsonl`, recording its component IDs and relation basis; motifs do not point to a moving cumulative edge file.
+- Storage policy hardened: retain one latest full cumulative working estate plus compact transactional sweep/checkpoint state, rather than multiple multi-gigabyte physical ancestor trees.
 
 ## Transport bootstrap location
 
@@ -66,6 +81,5 @@
 
 ## Next raw-sweep direction
 
-- Graph motifs over the cumulative relation estate, with a hard anti-explosion rule: emit only mathematically interpretable motifs grounded in explicit relations and shared problem attachment.
-- Priority motifs: explicit two-hop `IMPLIES`, multi-parent `COMPOSES` neighborhoods, theorem/dependency neighborhoods, and relation structures that recover proof context lost by atomization.
-- No arbitrary graph walks/path spam.
+- Sweep decomposition structure from `DERIVED_FROM`: recover meaningful parent-with-multiple-child mathematical decompositions while avoiding atomization spam.
+- Continue sparse relation motifs only when topology carries explicit mathematical structure; no arbitrary graph walks.
