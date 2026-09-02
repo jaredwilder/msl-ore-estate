@@ -27,10 +27,29 @@
 - Materialized cumulative state: 809,053 ORE-v1 objects / 4,523,860 relations.
 - Notable extraction counts: the 29,032-row CSV paragraph representation still yielded 37,521 new objects; Pass-2 master report 2,587; claim-universe replay 3,978; obligation↔claim table 3,743; contract-version diffs 273; obligation bridges 541. Route-path stitching added 17,039 relations with essentially no object inflation.
 - Cumulative `ore.jsonl` and `edges.jsonl` were physically materialized copy-on-write; no delta-only canonical state.
-- Pass-7/8 full historical semantic replay validation remains infrastructure debt; manifest source completeness is repaired, and validation must move to incremental/hash-indexed admission.
+
+## 2026-09-02 — Sweep 9 direct leaf-file sweep
+
+- Computed a SHA-level coverage census of every Pass-5 archive leaf against the explicit Pass-7/8 swept-source set.
+- Found 1,483 previously unswept leaf files totaling ~412 MB.
+- Leaf families: 759 individual Lean sources, 306 recombination dossiers, 303 per-problem dossiers, 61 contract-provenance files, 18 prior ore maps, proof specs, curated cross-session files, formalizer/receipt payloads and structured tables.
+- Consumed 1,483/1,483 leaf SHA values. Zero missing after completeness check.
+- Grammars: direct mathematical lines, +/-1 and +/-2 line neighborhoods, paragraphs, Lean declaration windows, structured key/value mining, structured row/record neighborhoods, giant-table provenance replay, and exact Lean source dependency reconstruction.
+- Individual Lean files alone added 19,158 objects / 46,068 relations; 3,283 declaration bindings were recovered and 2,686 direct `USES` relations reconstructed from named dependencies in proof bodies.
+- 306 recombination dossiers added 312,406 objects; 303 per-problem dossiers added 50,583; composite-evidence pairs 26,388; explicit implication storage 23,061; Lean declaration-body JSONL 15,751; all-positive transcript verdicts 13,503.
+- Giant structured-table replay showed provenance saturation without object inflation: the 294,574-row exact-field table added only 2 objects while adding 183,095 occurrence edges.
+- Sweep-9 gain: **+501,258 objects / +1,886,215 relations**.
+- Cumulative materialized state: **1,310,311 ORE-v1 objects / 6,410,075 relations**.
+- Pass-9 cumulative manifest includes the Pass-5 source ZIP plus 1,483 virtual archive-member source entries, allowing every `src:<member_sha>` to resolve through shipped source bytes without extracting 412 MB of duplicated files into the estate.
+
+## Transport bootstrap location
+
+- Pass-6 transport shards live in the root of Google Drive / My Drive, not in a folder.
+- Canonical Drive IDs: part-00 `16sJRBJcrYN3z9AZsJxKkgU2g8bJYaUXx`; part-01 `19VTtz7TwkncpIEvSIuYGRN3NWeXpw5zu`; part-02 `1qSi22sFYiRsH18FAxNI8R0Wh0B8Wp0i0`; part-03 `1qa7FMgxRZCU9NDcslBj9marHPAQPfKhi`; part-04 `1bPCrUqQi10T2BPM7MGe-9P2_SHGxIfiA`; part-05 `1bIsoYA0eSmLd_LfG72brjbfLUMTusAE6`; part-06 `1lEy9KWurTn22skQ1bULBUsTTmSQhm_DE`; part-07 `1KGSkZ404YuV5OM91YY4yrUQvvICOWM65`; part-08 `1dOfCdV-lZiU81CAfiYpBQ_j45vn3NiYz`.
+- Drive contains duplicate retry copies of part-02 and part-06; use canonical IDs above or verify against `MSL-ORE-ESTATE-BOOTSTRAP-PASS6-100MB-PARTS-SHA256.txt`.
 
 ## Next raw-sweep direction
 
-- Attack source-line/window grammars directly against original raw files rather than derived registries.
-- Mine numerical payload neighborhoods, Lean declaration dependency neighborhoods, and graph/path motifs not expressible as single-row extraction.
+- Compare the 3,999-file original raw-corpus manifest by exact SHA against every uploaded source archive to recover additional direct raw leaves beyond the Pass-5 archive.
+- Then attack recovered source bytes with raw line/window and exact numerical/witness neighborhood grammars.
 - Continue measuring object saturation separately from provenance/relation saturation.
