@@ -1,0 +1,7 @@
+*.zip
+*.tar.zst
+*.part-*
+.state/
+*.sqlite
+*.sqlite3
+__pycache__/
