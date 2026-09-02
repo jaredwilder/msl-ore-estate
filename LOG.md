@@ -42,6 +42,22 @@
 - Cumulative materialized state: **1,310,311 ORE-v1 objects / 6,410,075 relations**.
 - Pass-9 cumulative manifest includes the Pass-5 source ZIP plus 1,483 virtual archive-member source entries, allowing every `src:<member_sha>` to resolve through shipped source bytes without extracting 412 MB of duplicated files into the estate.
 
+## 2026-09-02 — Sweep 10 exact-byte recovery + numeric/witness context
+
+- Compared the original 3,999-row raw-corpus manifest by exact SHA against every locally available uploaded source archive.
+- Original manifest resolves to 3,971 unique content hashes.
+- Exact original bytes recoverable in the available archives: 867 unique hashes.
+- Passes 7–9 had already directly swept 862/867; exactly five recoverable original raw files remained, all receipt/kernel payloads totaling 10,679 bytes.
+- Recovered originals: receipts for Erdős 170, 276, 289, 1142 and 1212. They added only 3 objects / 19 relations, a strong direct-byte saturation signal.
+- Direct-byte saturation for the original raw hashes physically present in this session is now **867/867**. The remaining original-manifest hashes are not physically present as exact bytes in the uploaded archives available here.
+- Numeric/witness grammar was deliberately conservative: ignored booleans, token/cost telemetry, model-call statistics, corpus/admin counts and other non-mathematical numbers.
+- 94 witness-bank rows produced 188 contextual witness/construction objects / 282 relations.
+- 1,485 exact structured numeric rows produced 49 objects / 72 relations after mathematical-field filtering and source-record grouping.
+- Paired `exact_num`/`exact_den` into exact rational objects; bound related values such as `n_plus_k`, factorization and omega into record-neighborhood objects rather than treating bare integers as standalone mathematics.
+- Sweep-10 gain: **+240 objects / +373 relations**.
+- Cumulative materialized state: **1,310,551 ORE-v1 objects / 6,410,448 relations**.
+- Interpretation for mining only: raw-byte and numeric-payload representations are now strongly saturated; continue with structurally different graph/motif grammars rather than inflating metadata.
+
 ## Transport bootstrap location
 
 - Pass-6 transport shards live in the root of Google Drive / My Drive, not in a folder.
@@ -50,6 +66,6 @@
 
 ## Next raw-sweep direction
 
-- Compare the 3,999-file original raw-corpus manifest by exact SHA against every uploaded source archive to recover additional direct raw leaves beyond the Pass-5 archive.
-- Then attack recovered source bytes with raw line/window and exact numerical/witness neighborhood grammars.
-- Continue measuring object saturation separately from provenance/relation saturation.
+- Graph motifs over the cumulative relation estate, with a hard anti-explosion rule: emit only mathematically interpretable motifs grounded in explicit relations and shared problem attachment.
+- Priority motifs: explicit two-hop `IMPLIES`, multi-parent `COMPOSES` neighborhoods, theorem/dependency neighborhoods, and relation structures that recover proof context lost by atomization.
+- No arbitrary graph walks/path spam.
