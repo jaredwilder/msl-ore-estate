@@ -26,7 +26,7 @@ Load `MEMORY.md` first in a fresh session. It is the compact cross-session routi
 
 ## Estate scope
 
-See `ESTATE-SCOPE.md`. In scope are Day-1/Day-2 mines, all Erdős attack sessions, earlier math conversations, MSL/alien-math language work, Lean/formalizer outputs, theorem/gold ledgers, problem dossiers, route histories, witnesses, computations, proof repairs, repositories, certificates, and future math runs. The repo is the control plane for all of it.
+See `ESTATE-SCOPE.md`. In scope are Day-1/Day-2 mines, all Erdős attack sessions, earlier math conversations, MSL/alien-math language work, Mathematical Speaker work, Lean/formalizer outputs, theorem/gold ledgers, problem dossiers, route histories, witnesses, computations, proof repairs, repositories, certificates, and future math runs. The repo is the control plane for all of it.
 
 ## Transport state
 
@@ -49,28 +49,59 @@ Pass 12 DERIVED_FROM decomposition: +48,062 / +216,201 -> 1,359,663 / 6,631,205.
 
 ### Pass 13 — COMPLETE
 
-Second-generation atomization was rerun over all later parent-like objects discovered after the original atomization wave.
+Second-generation atomization over 363,710 later parent-like objects.
 
-- parents processed: 363,710 / 363,710
-- initial loose extraction: 228,148 candidates; rejected for canonical admission after sampling exposed prose/registry metadata inflation
-- precision re-extraction was then gated again against metadata assignments, timestamps, hashes, file/source fields and programming syntax
-- final strict atom set: 24,567 total candidates
-- globally new strict atoms: **20,430**
+- loose extraction was rejected after sampling exposed prose/registry metadata inflation
+- final strict new atoms: **20,430**
 - already-known atoms rediscovered: 4,137
-- strict parent→atom relations: **114,464**
-- new source-occurrence relations: **20,430**
-- Pass-13 total relation gain: **134,894**
-- canonical physical count verification PASSED
+- strict parent→atom relations: 114,464
+- source-occurrence relations: 20,430
+- gain: **+20,430 objects / +134,894 relations**
+- cumulative: **1,380,093 / 6,766,099**
 - canonical `ore.jsonl` SHA-256: `44e4471b5b8c1204d7f82fb0930b56567198ce6ea566ac357499a796c66441c0`
 - canonical `edges.jsonl` SHA-256: `b0fd63f4d9b7e3caeea1189ce5d869139ef34c672ac4b655c0131efa4e25e04f`
 - manifest SHA-256: `52824727db0b87096eb3f32e2f3a5869a8750c5efde29f48fdd598f835851f71`
 
-**Latest fully materialized cumulative estate: 1,380,093 ORE-v1 objects / 6,766,099 relations.**
+### Estate Pass 14 / Day-1 Wave 1 — COMPLETE
 
-Local latest working tree: `MSL-MATH-ESTATE-PASS13-CUMULATIVE-OREV1-2026-09-02`.
+Recursive census of `gpt-mine.zip` and `gpt-mine-2-novelty.zip` went through nested archives to exact leaf bytes.
+
+- 8,107 unique Day-1 leaf hashes
+- only 318 already represented as Pass-13 source hashes
+- **7,789 unique Day-1 leaves were unseen**
+- about 142 MB unique unseen leaf bytes
+- 7,506/7,789 contained detectable mathematical structure
+- 4,762 passed the first high-confidence math-density/source-type gate
+- all 4,762 high-confidence unseen leaves were swept transactionally
+- provisional extraction: 63,363 new objects; quality gate rejected 13,499 telemetry/checksum/path/status/boilerplate objects
+- canonical Day-1 Wave-1 gain: **+49,864 objects / +319,117 relations**
+- **latest fully materialized cumulative estate: 1,429,957 ORE-v1 objects / 7,085,216 relations**
+- cumulative manifest source identities: 6,374
+- canonical `ore.jsonl` SHA-256: `a728fcd9e2f3849e11063d8a439fd5fd872b7815039b95b22c73cfacc34a89be`
+- canonical `edges.jsonl` SHA-256: `f7bac0aee81d6f8315a24be8a438eee9a34510c856b876043ea15b09901ee028`
+- manifest SHA-256: `cbef252680e0a439439af8e445b98781529ae4f722557dd1e84e5da3148c240d`
+- **3,027 unseen lower-confidence Day-1 leaves remain explicitly UNDER_SWEPT, not discarded**
+
+Local latest working tree: `MSL-MATH-ESTATE-PASS14-CUMULATIVE-OREV1-2026-09-02`.
+
+## Estate Census 1 discoveries already confirmed outside Pass 14
+
+Exact-SHA/name census has surfaced genuinely external source families including:
+- Aug-31 raw attack sessions for Erdős #203, #875, #389, #749, #376
+- `ERDOS.zip`, `Solve-Erdos-875.zip`, deeper `Solving-Erdős-Problem-203` sessions, `asasdasd.zip` GPT/Gemini experiment
+- MSL canonical alien/language releases v1.1–v1.5 and Mathematical Speaker experiments
+- formalizer-line / formalizer lottery assets and standalone Lean targets
+- extensive Erdős #902 / JSPACE assets
+- Aug-30 standalone Erdős Lean formalizations
+- Aug-29 raw `session-export` archives
+- Aug-28 frontier formalizer/JSPACE/math assets
+
+The first staged Aug-31 batch had 12/12 genuinely new exact source/archive-leaf hashes relative to the cumulative estate.
 
 ## Current operating objective
 
-Begin ESTATE-WIDE SOURCE CENSUS 1. Inventory every recoverable math-bearing artifact across ChatGPT Library, current/runtime files, Google Drive math assets, known GitHub math repositories, Day 1, Day 2 and older sessions. Assign stable source identity/hash or provider reference, location, project/session provenance and extraction coverage state (`UNSEEN`, `UNDER_SWEPT`, `SWEPT`). Then feed unseen/under-swept sources through independent grammars into this same cumulative ORE estate.
-
-Do not return to Day-2-only scope.
+1. Continue ESTATE CENSUS 1; do not return to Day-2-only scope.
+2. Sweep the 3,027 remaining lower-confidence unseen Day-1 leaves with source-aware grammars that preserve math while refusing telemetry/metadata inflation.
+3. Ingest genuinely external Aug-31/Aug-30/Aug-29/Aug-28 source families in SHA-addressed batches, globally anti-joining against the 1,429,957-object estate.
+4. Keep every unswept/under-swept source in the coverage census until it is consumed; never silently drop it.
+5. Update `LOG.md`, `RESUME.md`, `MEMORY.md`, manifests and coverage indexes at each materialized cumulative checkpoint.
