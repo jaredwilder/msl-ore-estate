@@ -16,6 +16,7 @@ Updated: 2026-09-02
 - Timeouts must resume from source/chunk/row checkpoints; never restart by discarding committed ore.
 - Heavy cumulative archives do not travel through ChatGPT. Git holds control-plane files; heavy archives move by <=100 MiB transport shards and ultimately belong in GitHub Releases.
 - Erdos #411 is user-declared CLOSED and is not reopened unless explicitly requested.
+- `LOG.md` is the durable running campaign log and must be updated as sweep state advances.
 
 ## Transport state
 
@@ -29,13 +30,20 @@ Pass 6 sealed ORE-v1 archive:
 
 Pass 6 sealed estate: 458,212 ORE-v1 objects / 1,133,352 relations.
 
-Pass 7 raw sweep has swept all 49 staged raw surfaces and materialized:
-- 752,539 ORE-v1 objects
-- 4,288,239 relations
+Pass 7 raw sweep:
+- swept all 49 staged raw surfaces
+- materialized 752,539 ORE-v1 objects / 4,288,239 relations
 - +294,327 objects / +3,154,887 relations over Pass 6
+- manifest edge-only-source defect repaired by enforcing `swept source => manifest source`
+- full historical semantic replay validation remains too slow in Python and must become incremental/hash-indexed
 
-Pass 7 is NOT yet declared sealed. Validation exposed a manifest-generation bug: a swept raw source that contributes only provenance/edges and zero new primary objects must still appear in `manifest.json`. The permanent rule is `swept source => manifest source`. Full fail-closed validation and packaging must be completed before Pass 7 is canonical/sealed.
+Pass 8 representation + neighborhood sweep:
+- exhausted all 48 census surfaces previously marked `NOT_YET_PASS7_RAW_SWEPT`
+- added field/object replay, nested JSON mining, adjacent-record windows, native relation replay, contract-version diffs, route-path stitching and claim/obligation bridges
+- +56,514 objects / +235,621 relations
+- cumulative materialized state: **809,053 ORE-v1 objects / 4,523,860 relations**
+- cumulative canonical `ore.jsonl` and `edges.jsonl` physically materialized in the Pass-8 working estate
 
 ## Current operating objective
 
-Keep sweeping the raw corpus with independent extraction grammars until repeated sweeps approach object AND provenance saturation. Every result merges into the same ORE estate. Update `LOG.md` and this file as the state advances.
+Keep sweeping the raw corpus with independent extraction grammars until repeated sweeps approach object AND provenance saturation. Next independent families: original raw-source line/window rereads, exact numerical/witness payload neighborhoods, Lean declaration dependency neighborhoods, and graph/path motif extraction. Every result merges into the same ORE estate. Update `LOG.md` and this file as the state advances.
