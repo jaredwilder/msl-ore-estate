@@ -81,7 +81,18 @@ KBK propagation result:
 
 Derived artifacts are checksummed in Pass 15 under `COMPRESSION/ROUND1/`; repo summary is `compression/ROUND1.md`.
 
-Next KBK action: bind/decompose the 116 implication obligations, kernel/exact-check checkable ones, promote only machine-supported results, feed failures/missing premises back into the cumulative estate, and recompute compression. Raw estate census continues in parallel over older external source families.
+## 2026-09-03 — Real VVC Closure Harvest Round 1
+
+- Recovered the actual closed VVC build `VVC-TERMINAL-ENCIRCLEMENT-2026-08-10`; unchanged hostile suite passes **21/21**. Do not substitute a VVC-like reimplementation when the real build is available.
+- Closure operating loop sharpened to: literal target/version bind -> VVC compile -> Court every load-bearing bridge -> accept close/cut OR invalidate poison OR isolate exact residual -> recompile the WHOLE estate.
+- Bounded-swing anti-tunnel rule: every target swing must yield a close, reusable certified cut, certified refutation, or materially smaller exact residual, then return to whole-estate recompilation.
+- **#655 accepted:** complete negative close of the literal frozen statement by the regular-polygon family. Actual theoremizer promoted the cut only after observed reuse; historical Lean receipt remains only a finite proxy.
+- **C(13,6,3) local Pass-4 cut reconstructed:** degree-9 anchor local degree histograms `(3,9,0),(4,7,1),(5,5,2),(6,3,3)` are feasible; `(7,1,4)` is integer-infeasible. Surviving histogram does NOT identify a unique isomorphism class; representative-only extension shortcut killed as unsound.
+- **New C13 Court cut:** fixed validated run23b 21-cover has **no 4->3 compression**. Exhausted all `C(21,4)=5985` four-block removals and all admissible three-block repairs. Court node `COURT_C13_RUN23B_NO_4TO3`. This is local rigidity, not global `C(13,6,3)=21`.
+- **#539 stale close rejected:** claimed diagonal injection is false because `a/gcd(a,a)=1`. Court node `COURT_539_DIAGONAL_COLLAPSES`; VVC MVCC invalidated the historical close-status version. Equality `h(n)=n` is not decided by this rejection.
+- **#740 stale close rejected:** load-bearing claim “every subgraph of `K_m` is complete” is false under ordinary subgraph semantics; `K_3` contains path `P_3`. Court node `COURT_740_SUBGRAPH_STEP_FALSE`; historical close-status version invalidated. Canonical #740 remains unresolved.
+- Full receipts/scope are banked in `closure/VVC-HARVEST-ROUND1.md`.
+- Whole-estate close harvesting continues: `CLOSED`/`OPEN_DEBT NONE`/pressure labels are candidate generators only, never verdicts.
 
 ## Transport bootstrap location
 
